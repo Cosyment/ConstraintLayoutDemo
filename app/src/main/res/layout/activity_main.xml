@@ -4,9 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingTop="10dp"
     tools:context="com.waiting.constraintlayoutdemo.MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/horizontal_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vertical_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
 
     <TextView
         android:id="@+id/text1"
@@ -56,8 +70,8 @@
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:padding="10dp"
-        app:layout_constraintHorizontal_chainStyle="packed"
         android:text="text4"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/text5"
@@ -102,7 +116,7 @@
         app:layout_constraintDimensionRatio="2:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text4"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
         tools:ignore="UnknownId"/>
 
 
@@ -133,4 +147,12 @@
         android:text="时间时间时间时间"
         app:layout_constraintBottom_toBottomOf="@+id/img"
         app:layout_constraintLeft_toRightOf="@+id/img"/>
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="#612"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/vertical_line"/>
 </android.support.constraint.ConstraintLayout>
